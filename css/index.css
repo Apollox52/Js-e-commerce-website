@@ -34,7 +34,7 @@
 
 /* =====================Par 2--------------------------- */
 
-@media (max-width: 35em) {
+/* @media (max-width: 35em) {
   :root {
     --fs-bf-194: 12.3vw;
     --fs-bf-109: 6.8125rem;
@@ -76,6 +76,154 @@
     --fs-bf-16: 1rem;
     --fs-bf-15: 0.9375rem;
   }
-}
+} */
 
 /* ====================Part 1----------------------------------------------- */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/*Navbar*/
+.nav_header{
+  display: flex;
+}
+/*logo*/
+nav ul :first-child{
+  margin-left:10px;
+}
+nav ul{
+  display: flex;
+}
+nav li{
+  list-style: none;
+  padding: 30px 10px 20px 10px; 
+}
+nav a{
+  text-decoration: none;
+  color: black;
+}
+.header_login_container{
+  display: flex;
+  margin-left: 35%;
+}
+.header_login_container p {
+  padding: 30px 30px 15px 30px;
+}
+.header_login_container :nth-child(2) {
+  padding: 25px 30px 0px 25px;
+}
+.header_login_container :nth-child(3) {
+  padding: 25px 30px 0px 15px;
+}
+.header_login_container a{
+  text-decoration: none;
+  color: black;
+}
+.header_login_container p a i {
+  font-size: 25px;
+}
+/*landing_section*/
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.landing_section{
+  background:linear-gradient(to right ,rgba(205, 205, 205, 0.512) , rgba(222, 222, 222, 0.332)) ;
+  width:95% ;
+  border-radius: 20px;
+  min-height: 110vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: .5s;
+}
+.landing_section img{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  z-index: -1;
+  width: 600px  ;
+  
+}
+.landing_section:hover{
+  transition: .5s;
+  border-radius: 30px;
+  background-color: rgba(197, 226, 225, 0.427);
+  
+}
+.landing_section .leftcontent{
+  margin-left: 10%;
+}
+.landing_section .leftcontent h6 {
+ font-size: 30px;
+ font-weight: 550;
+ 
+ 
+}
+.landing_section .leftcontent h2{
+ font-size: 90px;
+ font-weight: 700;
+ line-height: 1;
+}
+.landing_section .leftcontent h1{
+ font-size: 150px;
+ font-weight: 800;
+ color: white;
+ line-height: 1;
+
+}
+
+.landing_section .leftcontent button{
+  padding: 15px 35px 15px 35px;
+  border: none;
+  border-radius: 200px;
+  color: white;
+  font-size: 15px;
+  background-color: rgb(10, 155, 168);
+  transition: .4s;
+  cursor: pointer;
+}
+
+.landing_section .leftcontent button:hover{
+  background-color: black;
+  transition: .4s;
+}
+.landing_section .rightcontent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: auto; 
+  margin-left: 70%;
+  margin-right: 5%;
+  margin-top: 17%;
+}
+.landing_section .rightcontent h6 {
+  font-size: small;
+}
+.landing_section .rightcontent p {
+  font-size:  12px;
+  font-weight: 200;
+  opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+
+
+
+.landingcards{
+  background:linear-gradient(to right ,rgba(128, 128, 128, 0.72) , rgb(222, 222, 222)) ;
+  width:95% ;
+  border-radius: 20px;
+  min-height: 100vh;
+  margin-top: 30px;
+}
