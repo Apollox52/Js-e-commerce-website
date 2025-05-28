@@ -1,38 +1,3 @@
-/* Custom Properties */
-
-/* =====================Par 2--------------------------- */
-
-:root {
-  /* color */
-  --clr-gray: 0 0% 86.3%;
-  --clr-gray-light: 0 0% 93.3%;
-  --clr-red: 356.7 90.1% 56.5%;
-  --clr-black: 0 0% 21.2%;
-  --clr-yellow: 43.8 99% 58.8%;
-  --clr-very-light-gray: 300 2.7% 92.7%;
-  --clr-green: 144.3 64.4% 49.6%;
-  --clr-blue: 214.5 100% 53.9%;
-  --clr-white: 0 0% 100%;
-
-  /* font-size */
-  /* --fs-bf-194: 12.125rem; */
-  --fs-bf-194: 12.3vw;
-  --fs-bf-109: 6.8125rem;
-  --fs-bf-65: 4.065rem;
-  --fs-bf-80: 5rem;
-  --fs-bf-50: 3.125rem;
-  --fs-bf-45: 2.8125rem;
-  --fs-bf-30: 1.875rem;
-  --fs-bf-20: 1.25rem;
-  --fs-bf-16: 1rem;
-  --fs-bf-15: 0.9375rem;
-
-  /* font family */
-  --font-montserrat: "Montserrat", sans-serif;
-  --font-poppins: "Poppins", sans-serif;
-}
-
-/* =====================Par 2--------------------------- */
 
 /* @media (max-width: 35em) {
   :root {
@@ -130,9 +95,10 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 .landing_section{
-  background:linear-gradient(to right ,rgba(205, 205, 205, 0.512) , rgba(222, 222, 222, 0.332)) ;
+  background:linear-gradient(to right ,rgba(24, 23, 23, 0.574) , rgba(222, 222, 222, 0.871)) ;
   width:95% ;
   border-radius: 20px;
   min-height: 110vh;
@@ -140,29 +106,31 @@ main{
   flex-direction: column;
   justify-content: center;
   transition: .5s;
+  
 }
 .landing_section img{
+  display: block;
   position: absolute;
   top: 10%;
   left: 50%;
-  z-index: -1;
-  width: 600px  ;
+  z-index: 1;
+  width:500px  ;
   
 }
 .landing_section:hover{
   transition: .5s;
   border-radius: 30px;
-  background-color: rgba(197, 226, 225, 0.427);
+  background-color: rgba(13, 15, 15, 0.688);
   
 }
 .landing_section .leftcontent{
+  margin-top: 10%;
   margin-left: 10%;
 }
 .landing_section .leftcontent h6 {
  font-size: 30px;
  font-weight: 550;
- 
- 
+
 }
 .landing_section .leftcontent h2{
  font-size: 90px;
@@ -170,11 +138,11 @@ main{
  line-height: 1;
 }
 .landing_section .leftcontent h1{
- font-size: 150px;
+  font-size: clamp(10rem, 5vw, 40rem);
  font-weight: 800;
  color: white;
  line-height: 1;
-
+ z-index: 22;
 }
 
 .landing_section .leftcontent button{
@@ -183,9 +151,10 @@ main{
   border-radius: 200px;
   color: white;
   font-size: 15px;
-  background-color: rgb(10, 155, 168);
+  background-color: rgb(255, 19, 2);
   transition: .4s;
   cursor: pointer;
+  margin-top: 35px;
 }
 
 .landing_section .leftcontent button:hover{
@@ -199,7 +168,7 @@ main{
   width: auto; 
   margin-left: 70%;
   margin-right: 5%;
-  margin-top: 17%;
+  
 }
 .landing_section .rightcontent h6 {
   font-size: small;
@@ -209,8 +178,233 @@ main{
   font-weight: 200;
   opacity: 0.7;
 }
+/*second section*/
+.firstcards{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-wrap: wrap;
+ width: 99%;
+ height:110vh ;
+ gap: 40px;
+ margin: 7%;
+ align-content: center;
+ 
+}
+
+.firstcards div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  border-radius: 20px;
+  padding: 20px;
+  width: 30%;
+  height: 300px;
+  transition: .5s ease ;
+  
+}
+
+.firstcards div:hover {
+  transition: .5s ease ;
+  box-shadow: 0px 0px 16px 0px rgb(0, 0, 0);
+}
+
+.firstcards >:nth-child(1){
+  background-color: rgba(0, 0, 0, 0.892);
+  width: 20%;
+  height: 60vh;
+}
+.firstcards >:nth-child(2){
+  background-color: rgb(255, 208, 0);
+  width: 20%;
+  height: 60vh;
+}
+.firstcards >:nth-child(3){
+  background:red ;
+  width: 50%;
+  height: 60vh;
+}
+.firstcards >:nth-child(4){
+  background-color: rgb(194, 194, 194);
+  width: 44%;
+  height: 60vh;
+  
+}
+.firstcards >:nth-child(5){
+  background-color: rgb(13, 181, 16);
+  width: 23%;
+  height: 60vh;
+}
+ .firstcards >:nth-child(6){
+  background-color: rgb(10, 92, 255);
+  width: 24%;
+  height: 60vh;
+}
+.firstcards h6{
+  font-size: 17px;
+  color: white;
+  
+}
+.firstcards h2{
+  font-size: 30px;
+  font-weight: 550;
+  color: white;
+}
+.firstcards h1{
+  
+  font-size: 40px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.639);
+  line-height: 1;
+  
+}
+.firstcards button{
+  padding: 10px 20px 10px 20px;
+  border: none;
+  border-radius: 200px;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  background-color: rgb(255, 255, 255);
+  transition: .4s;
+  cursor: pointer;
+  width: 130px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.firstcards button:hover{
+  background-color: black;
+  transition: .4s;
+  color: white;
+}
+
+/*--------------------------------------------------*/
+/*Media queries*/
+@media (max-width:1350px)  {
+  .landing_section img{
+    display: block;
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    z-index: 1;
+    width: 500px  ;
+
+  }
+  .landing_section .leftcontent h6 {
+    font-size: 20px;
+    font-weight: 550;
+   
+   }
+   .landing_section .leftcontent h2{
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1;
+   }
+   .landing_section .leftcontent h1{
+     font-size: 70px;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    z-index: 22;
+   }
+   .landing_section .leftcontent button{
+     padding: 15px 35px 15px 35px;
+     border: none;
+     border-radius: 200px;
+     color: white;
+     font-size: 15px;
+     background-color: rgb(255, 19, 2);
+     transition: .4s;
+     cursor: pointer;
+     margin-top: 35px;
+   }
+   .landing_section .rightcontent {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10%;
+    margin-right:5%;
+    margin-top: 10%;
+    width:400px;
+  }
+ }
+
+ @media (max-width:900px) {
+  .landing_section img{
+    display: block;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    z-index: 1;
+    width: 370px  ;
+  }
+  .landing_section .rightcontent {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-left: 9%;
+    margin-right:5%;
+    margin-top: 10%;
+  }
+ }
 
 
+
+ 
+@media (max-width:800px)  {
+
+  .landing_section img{
+    display: block;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    z-index: 1;
+    width: 250px  ;
+  }
+  .landing_section .leftcontent h6 {
+    font-size: 20px;
+    font-weight: 550;
+   
+   }
+   .landing_section .leftcontent h2{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1;
+   }
+   .landing_section .leftcontent h1{
+     font-size: 60px;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    z-index: 22;
+   }
+   
+   .landing_section .leftcontent button{
+     padding: 15px 35px 15px 35px;
+     border: none;
+     border-radius: 200px;
+     color: white;
+     font-size: 15px;
+     background-color: rgb(255, 19, 2);
+     transition: .4s;
+     cursor: pointer;
+     margin-top: 35px;
+   }
+   .landing_section .rightcontent {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 120px;
+    margin-left: 9%;
+    margin-right:5%;
+    margin-top: 10%;
+  }
+
+}
 
 
 
@@ -221,7 +415,7 @@ main{
 
 
 .landingcards{
-  background:linear-gradient(to right ,rgba(128, 128, 128, 0.72) , rgb(222, 222, 222)) ;
+  background-color: aqua ;
   width:95% ;
   border-radius: 20px;
   min-height: 100vh;
