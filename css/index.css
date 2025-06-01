@@ -1,160 +1,164 @@
-
-/* @media (max-width: 35em) {
-  :root {
-    --fs-bf-194: 12.3vw;
-    --fs-bf-109: 6.8125rem;
-    --fs-bf-65: 4.065rem;
-    --fs-bf-80: 5rem;
-    --fs-bf-50: 3.125rem;
-    --fs-bf-45: 2.8125rem;
-    --fs-bf-30: 1.875rem;
-    --fs-bf-20: 1rem;
-    --fs-bf-16: 0.8rem;
-    --fs-bf-15: 0.8rem;
-  }
-}
-@media (min-width: 35em) and (max-width: 59em) {
-  :root {
-    --fs-bf-194: 12.3vw;
-    --fs-bf-109: 6.8125rem;
-    --fs-bf-65: 4.065rem;
-    --fs-bf-80: 5rem;
-    --fs-bf-50: 3.125rem;
-    --fs-bf-45: 2.8125rem;
-    --fs-bf-30: 2.55rem;
-    --fs-bf-20: 1.25rem;
-    --fs-bf-16: 1rem;
-    --fs-bf-15: 0.8375rem;
-  }
-}
-
-@media (min-width: 59em) {
-  :root {
-    --fs-bf-194: 12.3vw;
-    --fs-bf-109: 6.8125rem;
-    --fs-bf-65: 4.065rem;
-    --fs-bf-80: 5rem;
-    --fs-bf-50: 3.125rem;
-    --fs-bf-45: 2.8125rem;
-    --fs-bf-30: 1.875rem;
-    --fs-bf-20: 2rem;
-    --fs-bf-16: 1rem;
-    --fs-bf-15: 0.9375rem;
-  }
-} */
-
-/* ====================Part 1----------------------------------------------- */
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+body{
+  overflow-x: hidden;
+  height: 100%;
+  min-width: 400px;
+  max-width: 1400px;
+}
 
 /*Navbar*/
 .nav_header{
   display: flex;
 }
+
 /*logo*/
-nav ul :first-child{
-  margin-left:10px;
-}
 nav ul{
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 2%;
+  
 }
 nav li{
+  height: 70px;
+  padding: 0 20px;
   list-style: none;
-  padding: 30px 10px 20px 10px; 
 }
 nav a{
   text-decoration: none;
-  color: black;
-}
-.header_login_container{
+  height: 100%;
   display: flex;
-  margin-left: 35%;
+  align-items: center;
+  color: rgb(157, 154, 154);
+  font-weight: 300;
+} 
+
+/*sidebar*/
+nav .sidebar{ 
+  background-color: rgba(41, 45, 45, 0.177);
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100% ;
+  backdrop-filter:blur(10px) ;
+  display: none;
+  z-index: 999999;
 }
-.header_login_container p {
-  padding: 30px 30px 15px 30px;
+nav .sidebar a{
+  color: rgb(0, 0, 0);
+} 
+
+nav .sidebar i{
+ font-size: 50px;
+ cursor: pointer;
 }
-.header_login_container :nth-child(2) {
-  padding: 25px 30px 0px 25px;
+
+/*search login*/
+.header_login_container{
+  display: flex; 
+  position: absolute;
+  right: 2%;
+  top: 0%;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
 }
-.header_login_container :nth-child(3) {
-  padding: 25px 30px 0px 15px;
-}
+
 .header_login_container a{
   text-decoration: none;
   color: black;
+  padding: 0 15px;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 .header_login_container p a i {
   font-size: 25px;
 }
+.bigscreenhidden{
+  display: none;
+  cursor: pointer;
+}
+
 /*landing_section*/
 main{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  
+  height: auto;
 }
 .landing_section{
-  background:linear-gradient(to right ,rgba(24, 23, 23, 0.574) , rgba(222, 222, 222, 0.871)) ;
-  width:95% ;
-  border-radius: 20px;
-  min-height: 110vh;
+  position: relative;
+  background-color: rgb(219, 218, 218);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; 
   transition: .5s;
-  
+  width: 95%;
+  border-radius: 20px;
 }
+
 .landing_section img{
-  display: block;
+  
   position: absolute;
-  top: 10%;
+  top: 50%;
   left: 50%;
+  transform: translate(0%, -60%);
   z-index: 1;
-  width:500px  ;
+  width: clamp(1.5rem, 30vw, 200rem); 
+  opacity: 1;
   
 }
 .landing_section:hover{
   transition: .5s;
   border-radius: 30px;
-  background-color: rgba(13, 15, 15, 0.688);
-  
+  background-color: rgba(138, 138, 138, 0.688);
+
 }
 .landing_section .leftcontent{
-  margin-top: 10%;
+  margin-top: 20%;
   margin-left: 10%;
 }
 .landing_section .leftcontent h6 {
- font-size: 30px;
+ font-size: clamp(1.5rem, 2vw, 20rem);
  font-weight: 550;
-
 }
 .landing_section .leftcontent h2{
- font-size: 90px;
+ font-size: clamp(1.5rem, 7vw, 20rem);
  font-weight: 700;
  line-height: 1;
 }
 .landing_section .leftcontent h1{
-  font-size: clamp(10rem, 5vw, 40rem);
- font-weight: 800;
+ font-size: clamp(1.5rem, 11vw, 20rem);
  color: white;
  line-height: 1;
  z-index: 22;
+ font-weight: 900;
 }
 
 .landing_section .leftcontent button{
-  padding: 15px 35px 15px 35px;
   border: none;
-  border-radius: 200px;
-  color: white;
-  font-size: 15px;
-  background-color: rgb(255, 19, 2);
+  color: rgb(255, 255, 255);
+  background-color: rgb(12, 194, 255);
   transition: .4s;
   cursor: pointer;
   margin-top: 35px;
+  font-size: clamp(0.8rem, 1.2vw, 3rem);
+  padding: clamp(0.4rem, 1vw, 2rem) clamp(0.8rem, 2vw, 1.5rem);
+  border-radius: clamp(0.2rem, 5vw, 20rem);
+  margin-bottom: 50px;
 }
 
 .landing_section .leftcontent button:hover{
@@ -162,32 +166,33 @@ main{
   transition: .4s;
 }
 .landing_section .rightcontent {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: auto; 
-  margin-left: 70%;
-  margin-right: 5%;
+  /* flex: 1 1 30%; */
+  text-align: right;
+  padding: 20px;
+  margin-left: 400px;
   
 }
 .landing_section .rightcontent h6 {
-  font-size: small;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 .landing_section .rightcontent p {
-  font-size:  12px;
-  font-weight: 200;
-  opacity: 0.7;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
 }
+
 /*second section*/
-.firstcards{
+ .firstcards{
  display: flex;
  justify-content: center;
  align-items: center;
  flex-wrap: wrap;
  width: 99%;
- height:110vh ;
+ min-height: 600px;
  gap: 40px;
- margin: 7%;
+ margin: 5% 5%;
  align-content: center;
  
 }
@@ -197,222 +202,318 @@ main{
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  border-radius: 20px;
+  border-radius: 35px;
   padding: 20px;
-  width: 30%;
-  height: 300px;
+  width: 300px;
+  min-height: 310px;
+  max-height: 500px;
   transition: .5s ease ;
-  
+  position: relative;
+
+}
+
+.firstcards > div:nth-child(5) {
+  overflow: hidden;
 }
 
 .firstcards div:hover {
   transition: .5s ease ;
   box-shadow: 0px 0px 16px 0px rgb(0, 0, 0);
 }
+/* images */
+.firstcards div:nth-child(1) img{
+  position: absolute;
+  left:15%;
+  transform: translate(-25%, 4%);
+  width: clamp(20rem, 20vw, 40rem); 
 
+}
+ .firstcards div:nth-child(2) img{
+  position: absolute;
+  width: clamp(20rem, 22vw, 40rem); 
+  left:15%;
+  transform: translate(-8%, -20%);
+
+}
+.firstcards div:nth-child(3) img{
+   position: absolute;
+  width: clamp(20rem, 35vw, 40rem); 
+  left:15%;
+  transform: translate(20%,10%);
+}
+.firstcards div:nth-child(4) img{
+  position: absolute;
+  width: clamp(15rem, 25vw, 25rem); 
+  transform: translate(80%,20%);
+}
+.firstcards div:nth-child(5) img{
+  position: absolute;
+  width: clamp(20rem, 8vw, 25rem); 
+  transform: translate(10%,18%);
+
+}
+.firstcards div:nth-child(6) img{
+  position: absolute;
+  width: clamp(15rem, 15vw, 25rem); 
+  transform: translate(10%,-70%);
+} 
+/* cards style */
 .firstcards >:nth-child(1){
   background-color: rgba(0, 0, 0, 0.892);
   width: 20%;
-  height: 60vh;
+  height: 35vh;
 }
 .firstcards >:nth-child(2){
   background-color: rgb(255, 208, 0);
   width: 20%;
-  height: 60vh;
+  height: 35vh;
 }
 .firstcards >:nth-child(3){
   background:red ;
   width: 50%;
-  height: 60vh;
+  height: 35vh;
 }
 .firstcards >:nth-child(4){
   background-color: rgb(194, 194, 194);
   width: 44%;
-  height: 60vh;
+  height: 35vh;
   
 }
 .firstcards >:nth-child(5){
   background-color: rgb(13, 181, 16);
   width: 23%;
-  height: 60vh;
+  height: 35vh;
 }
  .firstcards >:nth-child(6){
   background-color: rgb(10, 92, 255);
   width: 24%;
-  height: 60vh;
+  height: 35vh;
 }
 .firstcards h6{
-  font-size: 17px;
+  font-size: clamp(1rem, 1vw, 30rem);
   color: white;
-  
 }
 .firstcards h2{
-  font-size: 30px;
+  font-size: clamp(1rem, 2vw, 30rem);
   font-weight: 550;
   color: white;
 }
 .firstcards h1{
-  
-  font-size: 40px;
+  font-size: clamp(1.8rem, 2.4vw, 20rem);
   font-weight: 800;
   color: rgba(255, 255, 255, 0.639);
   line-height: 1;
   
 }
 .firstcards button{
-  padding: 10px 20px 10px 20px;
+  padding: clamp(.1rem, 1vw, 2rem);
   border: none;
   border-radius: 200px;
   color: rgb(0, 0, 0);
-  font-size: 15px;
+  font-size: clamp(.8rem, 1vw, 30rem);
   background-color: rgb(255, 255, 255);
   transition: .4s;
   cursor: pointer;
-  width: 130px;
-  margin-top: 40px;
-  margin-bottom: 30px;
+  width: clamp(8rem, 8vw, 20rem) ;
+  min-height: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  z-index: 999;
 }
 .firstcards button:hover{
   background-color: black;
   transition: .4s;
   color: white;
+} 
+
+/*secondcards*/
+.secondcards{
+  display: flex;
+  
+  gap: 60px;
+  margin: 0% 6% 2%;
+  
 }
+.secondcards div{
+  display: flex;
+  height: 90px;
+  max-width: 80%;
+  
+}
+.secondcards svg {
+  height: 100%;
+  width: 60px;
+}
+.wrappersecondcard{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  
+}
+.secondcards h1 {
+  font-size:16px;
+  padding: 0px 5px;
+}
+.secondcards h2 {
+  font-size: 13px;
+  font-weight: 200;
+  padding: 0px 5px;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*--------------------------------------------------*/
 /*Media queries*/
 @media (max-width:1350px)  {
-  .landing_section img{
-    display: block;
-    position: absolute;
-    top: 30%;
-    left: 45%;
-    z-index: 1;
-    width: 500px  ;
-
-  }
-  .landing_section .leftcontent h6 {
-    font-size: 20px;
-    font-weight: 550;
-   
-   }
-   .landing_section .leftcontent h2{
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 1;
-   }
-   .landing_section .leftcontent h1{
-     font-size: 70px;
-    font-weight: 800;
-    color: white;
-    line-height: 1;
-    z-index: 22;
-   }
-   .landing_section .leftcontent button{
-     padding: 15px 35px 15px 35px;
-     border: none;
-     border-radius: 200px;
-     color: white;
-     font-size: 15px;
-     background-color: rgb(255, 19, 2);
-     transition: .4s;
-     cursor: pointer;
-     margin-top: 35px;
-   }
-   .landing_section .rightcontent {
-    
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 10%;
-    margin-right:5%;
-    margin-top: 10%;
-    width:400px;
-  }
- }
-
- @media (max-width:900px) {
-  .landing_section img{
-    display: block;
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    z-index: 1;
-    width: 370px  ;
-  }
-  .landing_section .rightcontent {
-    
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    margin-left: 9%;
-    margin-right:5%;
-    margin-top: 10%;
-  }
- }
-
-
-
- 
-@media (max-width:800px)  {
-
-  .landing_section img{
-    display: block;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    z-index: 1;
-    width: 250px  ;
-  }
-  .landing_section .leftcontent h6 {
-    font-size: 20px;
-    font-weight: 550;
-   
-   }
-   .landing_section .leftcontent h2{
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 1;
-   }
-   .landing_section .leftcontent h1{
-     font-size: 60px;
-    font-weight: 800;
-    color: white;
-    line-height: 1;
-    z-index: 22;
-   }
-   
-   .landing_section .leftcontent button{
-     padding: 15px 35px 15px 35px;
-     border: none;
-     border-radius: 200px;
-     color: white;
-     font-size: 15px;
-     background-color: rgb(255, 19, 2);
-     transition: .4s;
-     cursor: pointer;
-     margin-top: 35px;
-   }
-   .landing_section .rightcontent {
-    
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 120px;
-    margin-left: 9%;
-    margin-right:5%;
-    margin-top: 10%;
-  }
-
+  
+  
 }
 
+@media (max-width:1000px) {
+  .bigscreenhidden{
+    display: flex;
+  }
+  .mobilehidden{
+    display: none;
+  }
+  .landing_section .rightcontent {
+    /* flex: 1 1 30%; */
+    text-align: right;
+    padding: 20px;
+    margin-left: 30px; 
+  } 
+  /*cards*/
+  
+  .firstcards >:nth-child(1){
+    background-color: rgba(0, 0, 0, 0.892);
+    width: 44%;
+    height: 35vh;
+  }
+  .firstcards >:nth-child(2){
+    background-color: rgb(255, 208, 0);
+    width: 44%;
+    height: 35vh;
+  }
+  .firstcards >:nth-child(3){
+    background:red ;
+    width: 90%;
+    height: 35vh;
+  }
+  .firstcards >:nth-child(4){
+    background-color: rgb(194, 194, 194);
+    width: 90%;
+    height: 35vh;
+  }
+  .firstcards >:nth-child(5){
+    background-color: rgb(13, 181, 16);
+    width: 44%;
+    height: 35vh;
+  }
+   .firstcards >:nth-child(6){
+    background-color: rgb(10, 92, 255);
+    width: 44%;
+    height: 35vh;
+  }
+  /*images*/
+  .firstcards div:nth-child(1) img{
+    transform: translate(10%,0%);
+  }
+  .firstcards div:nth-child(2) img{
+    transform: translate(10%,0%);
+  }
+  .firstcards div:nth-child(3) img{
+    transform: translate(80%,0%);
+  }
+  .firstcards div:nth-child(4) img{
+    transform: translate(160%,20%);
+  }
+}
 
+@media (max-width:700px)  {
+/*navbar*/
+.ul{
+  display: none; 
+}
 
-
-
-
-
-
+.landing_section .rightcontent {
+  display: none;
+}
+/* cards */
+.firstcards >:nth-child(1){
+  background-color: rgba(0, 0, 0, 0.892);
+  width: 90%;
+  height: 15vh;
+}
+.firstcards >:nth-child(2){
+  background-color: rgb(255, 208, 0);
+  width: 90%;
+  height: 28vh;
+}
+.firstcards >:nth-child(3){
+  background-color: rgb(255, 0, 0);
+  width: 90%;
+  height: 20vh;
+}
+.firstcards >:nth-child(5){
+  background-color: rgb(13, 181, 16);
+  width: 90%;
+  height: 35vh;
+}
+ .firstcards >:nth-child(6){
+  background-color: rgb(10, 92, 255);
+  width: 90%;
+  height:14vh;
+}
+/*images*/
+.firstcards div:nth-child(1) img{
+  transform: translate(20%,0%);
+}
+.firstcards div:nth-child(2) img{
+  transform: translate(30%,0%);
+}
+.firstcards div:nth-child(3) img{
+  transform: translate(20%,0%);
+}
+.firstcards div:nth-child(4) img{
+  transform: translate(80%,20%);
+}
+.firstcards div:nth-child(5) img{
+  transform: translate(20%,10%);
+  width: clamp(30rem, 40vw, 50rem);
+}
+.firstcards div:nth-child(6) img{
+  transform: translate(100%,0%);
+}
+/*Second cards*/
+.secondcards{
+  flex-wrap: wrap;
+  min-width: 120%;
+  margin: 2%;
+  justify-content: center;
+}
+.secondcards div {
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+}
+.secondcards svg {
+  height: 100%;
+  width: 300px;
+}
+}
 
 .landingcards{
   background-color: aqua ;
