@@ -3,6 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  
+
 }
 body{
   overflow-x: hidden;
@@ -53,6 +55,7 @@ nav .sidebar{
   backdrop-filter:blur(10px) ;
   display: none;
   z-index: 999999;
+  
 }
 nav .sidebar a{
   color: rgb(0, 0, 0);
@@ -89,6 +92,20 @@ nav .sidebar i{
   display: none;
   cursor: pointer;
 }
+.header_login_container p a i span{
+  background-color: red;
+  position: absolute;
+  color: white;
+  font-size: 10px;
+  border-radius: 20px;
+  width: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 20%;
+  right: 5%;
+  padding: 2px 9px;
+}
 
 /*landing_section*/
 main{
@@ -99,6 +116,7 @@ main{
   height: auto;
 }
 .landing_section{
+  opacity: 0;
   position: relative;
   background-color: rgb(219, 218, 218);
   display: flex;
@@ -107,18 +125,21 @@ main{
   flex-wrap: wrap; 
   transition: .5s;
   width: 95%;
-  border-radius: 20px;
+  border-radius: 20px; 
+  animation: popIn 2s ease-out forwards;
+  
 }
 
 .landing_section img{
   
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 50%;
   transform: translate(0%, -60%);
   z-index: 1;
   width: clamp(1.5rem, 30vw, 200rem); 
-  opacity: 1;
+  opacity: 0;
+  animation: popIn 2s 1.5s ease-out forwards;
   
 }
 .landing_section:hover{
@@ -132,20 +153,30 @@ main{
   margin-left: 10%;
 }
 .landing_section .leftcontent h6 {
+  opacity: 0;
  font-size: clamp(1.5rem, 2vw, 20rem);
  font-weight: 550;
+ animation: slideInBottomToTop 1.2s ease .7s forwards;
+
+
 }
+
 .landing_section .leftcontent h2{
+  opacity: 0;
  font-size: clamp(1.5rem, 7vw, 20rem);
  font-weight: 700;
  line-height: 1;
+ animation: slideInBottomToTop 1.2s ease .7s forwards;
 }
 .landing_section .leftcontent h1{
+  opacity: 0;
  font-size: clamp(1.5rem, 11vw, 20rem);
  color: white;
  line-height: 1;
  z-index: 22;
  font-weight: 900;
+ animation: slideInBottomToTop 1s ease .7s forwards;
+  
 }
 
 .landing_section .leftcontent button{
@@ -159,6 +190,8 @@ main{
   padding: clamp(0.4rem, 1vw, 2rem) clamp(0.8rem, 2vw, 1.5rem);
   border-radius: clamp(0.2rem, 5vw, 20rem);
   margin-bottom: 50px;
+  animation: popIn 2s 1.5s ease-out forwards;
+  opacity: 0;
 }
 
 .landing_section .leftcontent button:hover{
@@ -209,7 +242,6 @@ main{
   max-height: 500px;
   transition: .5s ease ;
   position: relative;
-
 }
 
 .firstcards > div:nth-child(5) {
@@ -226,7 +258,7 @@ main{
   left:15%;
   transform: translate(-25%, 4%);
   width: clamp(20rem, 20vw, 40rem); 
-
+  
 }
  .firstcards div:nth-child(2) img{
   position: absolute;
@@ -326,18 +358,18 @@ main{
   color: white;
 } 
 
+
 /*secondcards*/
 .secondcards{
   display: flex;
-  
-  gap: 60px;
+  gap: 100px;
   margin: 0% 6% 2%;
   
 }
 .secondcards div{
   display: flex;
   height: 90px;
-  max-width: 80%;
+  width: 100%;
   
 }
 .secondcards svg {
@@ -352,17 +384,133 @@ main{
   
 }
 .secondcards h1 {
-  font-size:16px;
+  font-size:10px;
   padding: 0px 5px;
 }
 .secondcards h2 {
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 200;
   padding: 0px 5px;
   
 }
+/*Red Section*/
+.redsection{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  width: 90%;
+  background-color: rgb(225, 4, 4);
+  border-radius: 25px;
+  height: 360px;
+  display: flex;
+  position: relative;
+  box-shadow: 0 0 20px black;
+}
+
+.redsection > div {
+  
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 12%;
+  animation: popIn 2s ease-out forwards;
+}
+
+.red_rightcontent{
+  
+  margin-left: 50%;
+}
 
 
+.redsection .red_leftcontent h5{
+  font-weight: 400;
+  color: white;
+  
+  
+}
+.redsection .red_leftcontent h1{
+  font-weight: 900;
+  color: white;
+  font-size: 6rem ;
+  line-height: 1;
+  width: 50%;
+}
+
+
+.redsection .red_rightcontent h5 {
+  
+  font-weight: 400;
+  color: white;
+  padding: 2% 0%;
+  
+}
+.redsection .red_rightcontent h1{
+  font-weight: 700;
+  color: white;
+  font-size: 2.9rem ;
+  line-height: 1;
+  padding: 2% 0%;
+}
+.redsection .red_rightcontent p {
+ 
+  font-weight: 300;
+  color: white;
+  padding: 2% 0%;
+  width: 200%;
+}
+.redsection .red_rightcontent button {
+ 
+  
+  color: rgb(255, 0, 0);
+  margin-top:   10%;
+  background-color: white;
+  padding: 3% 10%;
+  border-radius: 50px;
+  border: none;
+  z-index: 99;
+  transition: .5s;
+}
+
+.redsection .red_rightcontent button:hover {
+ 
+  background-color: black;
+  transition: .5s;
+}
+
+.redsection img {
+  position: absolute;
+  height:800px;
+  width:1100px;
+  z-index: 44;
+  pointer-events: none;/*so that the button hover works under the image*/
+  display: flex;
+  top: -85%;
+  left:   7%;
+
+}
+.BestSeller{
+  
+  width: 95%;
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  
+}
+.BestSellercontent{
+  text-align: center;
+  align-items: center;
+}
+.BestSellercontent h1 {
+  font-size: clamp(30px,3vw,100px);
+}
+.BestSellercontent P {
+  font-size: clamp(10px,1vw,15px);
+  width: 100%;
+}
 
 
 
@@ -389,8 +537,16 @@ main{
   .mobilehidden{
     display: none;
   }
+  /* cart */
+  .header_login_container p a i span{
+    font-size: 10px;
+    top: 20%;
+    right: 25%;
+    padding: 2px 9px;
+  }
+
+  /*Landng*/
   .landing_section .rightcontent {
-    /* flex: 1 1 30%; */
     text-align: right;
     padding: 20px;
     margin-left: 30px; 
@@ -401,6 +557,7 @@ main{
     background-color: rgba(0, 0, 0, 0.892);
     width: 44%;
     height: 35vh;
+    
   }
   .firstcards >:nth-child(2){
     background-color: rgb(255, 208, 0);
@@ -440,8 +597,141 @@ main{
   .firstcards div:nth-child(4) img{
     transform: translate(160%,20%);
   }
+  /*SecndCards*/
+  .secondcards {
+    display: flex;
+    height: 150px;
+    width: 100%;
+    gap: 30px;
+  }
+  .secondcards div {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 25%;
+    
+}
+.secondcards svg {
+    height: 100px;
+    min-width: 10px;
+}
+/*red section*/
+.redsection{
+  height: 400px;
+}
+.redsection img {
+  height:400px;
+  width:500px;
+  top: -35%;
+  left: 0%;
 }
 
+
+
+
+
+
+}
+/*media queries for red section */
+@media (max-width:850px) {
+
+  .redsection{
+    margin-top: 200px;
+    width: 80%;
+    height: 800px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .redsection > div {
+    
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    height: 50%;
+  }
+  .redsection .red_leftcontent {
+    justify-content: flex-end;
+  }
+  .redsection .red_rightcontent {
+    justify-content: flex-start;
+  }
+  .redsection .red_leftcontent h1{
+    color: white;
+    font-size: 2rem ;
+    line-height: 1;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  .redsection .red_rightcontent h5 {
+    
+    font-weight: 400;
+    color: white;
+    padding: 9% 0%;
+    display: flex;
+    justify-content: center;
+    line-height: 1;
+    
+  }
+  .redsection .red_rightcontent h1{
+    font-weight: 700;
+    color: white;
+    font-size: 2rem ;
+    line-height: 1;
+    padding: 2% 0%;
+    display: flex;
+    justify-content: center;
+  
+  }
+  .redsection .red_rightcontent p {
+   
+    font-weight: 300;
+    color: white;
+    padding: 2% 0%;
+    display: flex;
+    justify-content: end;
+    align-items: normal;
+    width: 100%;
+    
+  }
+  .redsection .red_rightcontent button {
+   
+    
+    color: rgb(255, 0, 0);
+    margin-top:   10%;
+    background-color: white;
+    padding: 3% 10%;
+    border-radius: 50px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    z-index: 9999999;
+  }
+  
+  .redsection img {
+    position: absolute;
+    height:400px;
+    width:500px;
+    z-index: 33;
+    display: flex;
+    top: -20%;
+    left: -9%;
+  }
+
+
+
+
+
+
+
+}
 @media (max-width:700px)  {
 /*navbar*/
 .ul{
@@ -503,22 +793,139 @@ main{
   min-width: 120%;
   margin: 2%;
   justify-content: center;
+  gap: 0;
+  width: 100%;
 }
 .secondcards div {
   flex-direction: column;
   align-items: center;
-  height: 100px;
+  width: 40%;
+  height: 150px;
+  
 }
 .secondcards svg {
-  height: 100%;
-  width: 300px;
-}
+  height: 90px;
+  width: 250px;
+  
 }
 
-.landingcards{
-  background-color: aqua ;
-  width:95% ;
-  border-radius: 20px;
-  min-height: 100vh;
-  margin-top: 30px;
+.red_rightcontent{
+  
+  margin-left: 0%;
 }
+
+
+
+
+}
+@media (max-width:500px)  {
+  /*secondcards*/
+  .secondcards{
+  margin-bottom: 70%;
+  }
+  
+  .secondcards div {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    
+  }
+  .redsection .red_leftcontent h1{
+    font-weight: 900;
+    color: white;
+    font-size: 2rem ;
+    line-height: 1;
+    width: 70%;
+  }
+  .redsection .red_rightcontent h1{
+    font-weight: 900;
+    color: white;
+    font-size: 2rem ;
+    line-height: 1;
+    width: 100%;
+  }
+ 
+  
+}
+
+/*Animations*/
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+@keyframes slideInRightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes slideInLeftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes slideInBottomToTop {
+  0% {
+    opacity: 0;
+    transform: translateY(200px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card1 {
+  opacity: 0;
+}
+.card2{
+  opacity: 0;
+}
+.img{
+  opacity: 0;
+}
+
+.card1.visible {
+  animation: slideInRightToLeft 0.9s ease-out forwards;
+  /*foward soo that the animation keeps the last state ,
+  instead of going back to point one */
+}
+
+.card2.visible{
+  animation: slideInLeftToRight 0.9s ease-out forwards;
+}
+
+.img.visible{
+  animation: slideInRightToLeft 0.7s ease-out forwards .1s;
+}
+
+
+
+
+
+
+
+
