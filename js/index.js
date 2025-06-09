@@ -38,14 +38,48 @@ images.forEach(image=>{
 
 cards2.forEach((card)=>{
   observer.observe(card);
+});
+
+// hovereffect
+
+const thirdSectionTitle = document.querySelectorAll('.thirdcards div h4');
+const thirdSectionCard = document.querySelectorAll('.thirdcards div');
+const thirdSectionPrice = document.querySelectorAll('.thirdcards div h1');
+const thirdSectionButton = document.querySelectorAll('.thirdcards div button');
+
+thirdSectionCard.forEach((title,index)=>{
+  title.addEventListener('mouseover',()=>{
+    thirdSectionTitle[index].style.color = "red" ;
+    thirdSectionTitle[index].style.fontWeight = "900" ;
+    thirdSectionPrice[index].style.opacity = "0";
+    thirdSectionButton[index].style.opacity = "1"
 })
+  title.addEventListener('mouseout',()=>{
+    thirdSectionTitle[index].style.color = "black" ;
+    thirdSectionTitle[index].style.fontWeight = "500" ;
+    thirdSectionPrice[index].style.opacity = "1";
+    thirdSectionButton[index].style.opacity = "0"
+})
+});
 
+// carthover
 
+const shoppingBag = document.querySelector(".header_login_container p:nth-child(3) a i"); 
+const cart = document.querySelector(".header_login_container .cart"); 
 
+shoppingBag.addEventListener('mouseover',()=>{
+  cart.style.display = "flex" ;
+});
+shoppingBag.addEventListener('mouseout',()=>{
+  cart.style.display = "none" ;
+});
 
-
-
-
+cart.addEventListener('mouseover',()=>{
+  cart.style.display = "flex" ;
+});
+cart.addEventListener('mouseout',()=>{
+  cart.style.display = "none" ;
+});
 
 
 

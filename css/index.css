@@ -31,6 +31,7 @@ nav li{
   padding: 0 20px;
   list-style: none;
 }
+
 nav a{
   text-decoration: none;
   height: 100%;
@@ -38,8 +39,15 @@ nav a{
   align-items: center;
   color: rgb(157, 154, 154);
   font-weight: 300;
+  transition: .3s ease;
 } 
 
+nav a:hover{
+  color: black;
+  font-weight: 300;
+  transition: .3s ease;
+
+} 
 /*sidebar*/
 nav .sidebar{ 
   background-color: rgba(41, 45, 45, 0.177);
@@ -105,7 +113,33 @@ nav .sidebar i{
   top: 20%;
   right: 5%;
   padding: 2px 9px;
+  font-style: normal;
 }
+
+.header_login_container .cart{
+  position: absolute;
+  background-color: rgb(239, 236, 236);
+  width: 400px;
+  min-height:250px;
+  right: 6px;
+  top: 50px;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 0 200px 1px;
+  display: none;
+}
+.header_login_container .cart h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.header_login_container .cart i {
+  font-size: 50px;
+}
+
 
 /*landing_section*/
 main{
@@ -194,10 +228,25 @@ main{
   opacity: 0;
 }
 
-.landing_section .leftcontent button:hover{
-  background-color: black;
-  transition: .4s;
+.landing_section .leftcontent button::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -4px;
+  width: 200px;
+  height:  55px;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.99);
+  transform: scale(1.2,1.2);
+  border-radius: 90px;
 }
+.landing_section .leftcontent button:hover::after {
+  opacity: 1;
+  transform: scale(1,1);
+}
+
 .landing_section .rightcontent {
   /* flex: 1 1 30%; */
   text-align: right;
@@ -457,7 +506,7 @@ main{
   font-weight: 300;
   color: white;
   padding: 2% 0%;
-  width: 200%;
+  width: 300px;
 }
 .redsection .red_rightcontent button {
  
@@ -497,8 +546,7 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 20vh;
-  
+  max-height: 30vh;
 }
 .BestSellercontent{
   text-align: center;
@@ -511,15 +559,259 @@ main{
   font-size: clamp(10px,1vw,15px);
   width: 100%;
 }
+/*ThirdCardsSection*/
+.thirdcards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 700px;
+  flex-wrap: wrap;
+  gap: 4%;
+  justify-items: center;
+  margin-bottom: 100px;
+}
+.thirdcards div {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:200px;
+
+}
+.thirdcards div img{
+  width:100%;
+  height:100%;
+  border-radius: 20px;
+  transition: .3s ease;
+}
 
 
+.thirdcards div h4 {
+  padding: 15px 0px;
+  display: flex;
+  width: 100%;
+  text-align: start;
+  line-height: 1;
+  font-weight: 500;
+  transition: color 1s ease;
+}
+
+.thirdcards div h1 {
+  padding: 0px 0px;
+  display: flex;
+  width: 100%;
+  text-align: center;
+  transition: opacity .5s ease;
+
+}
+
+.thirdcards div button{
+  background-color: red ;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius:20px;
+  padding: 10px 20px;
+  transition: opacity .8s ease;
+  opacity: 0;
+  position: relative;
+  top: -40px;
+  left: -80px ;
+}
 
 
+/*GreenSectn*/
+
+.greensection{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  width: 90%;
+  background-color: rgb(73, 179, 82);
+  border-radius: 25px;
+  height: 360px;
+  display: flex;
+  position: relative;
+  box-shadow: 0 0 20px black;
+}
+
+.greensection  > div {
+  
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 12%;
+  animation: popIn 2s ease-out forwards;
+}
+
+.red_rightcontent{
+  
+  margin-left: 50%;
+}
 
 
+.greensection .green_leftcontent h5{
+  font-weight: 400;
+  color: white;
+  
+  
+}
+.greensection .green_leftcontent h1{
+  font-weight: 900;
+  color: white;
+  font-size: 6rem ;
+  line-height: 1;
+  width: 50%;
+}
 
 
+.greensection .green_rightcontent h5 {
+  
+  font-weight: 400;
+  color: white;
+  padding: 2% 0%;
+  margin-left: 10%;
+}
+.greensection .green_rightcontent h1{
+  font-weight: 700;
+  color: white;
+  font-size: 2.9rem ;
+  line-height: 1;
+  padding: 2% 0%;
+}
+.greensection .green_rightcontent p {
+ 
+  font-weight: 300;
+  color: white;
+  padding: 2% 0%;
+  width: 400px;
+}
+.greensection .green_rightcontent button {
+ 
+  
+  color: rgb(89, 255, 0);
+  margin-top:   10%;
+  background-color: white;
+  padding: 3% 10%;
+  border-radius: 50px;
+  border: none;
+  z-index: 99;
+  transition: .5s;
+}
 
+.greensection .green_rightcontent button:hover {
+ 
+  background-color: black;
+  transition: .5s;
+}
+
+.greensection img {
+  position: absolute;
+  height:700px;
+  width:700px;
+  z-index: 44;
+  pointer-events: none;/*so that the button hover works under the image*/
+  display: flex;
+  top: -85%;
+  left:   7%;
+
+}
+/*fourthcards*/
+
+.fourthcards {
+
+display:flex; 
+justify-content: center;
+align-items: center;
+
+width: 100%;
+height: 550px;
+gap: 30px;
+}
+
+.fourthcards .cardcontainer {
+ 
+  width: 30%;
+  height: 500px;
+
+}
+
+.fourthcards img {
+  width:  clamp(360px,2vw,400px);
+  height: 200px;
+  border-radius: 20px;
+  transition: .4s ease;
+  overflow: hidden;
+}
+
+.fourthcards img:hover {
+  box-shadow: 0 0 15px rgb(0, 0, 0);
+  transition: .4s ease;
+}
+
+.imagecontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.fourthcards .firsttexts  {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 6%;
+  margin-left: 7%;
+}
+.fourthcards .textcontainer h1 {
+  width: 90%;
+  font-size: 18px;
+  margin-top: 7%;
+  margin-left: 7%;
+}
+.fourthcards .textcontainer p {
+  margin-top: 7%;
+  margin-left: 7%;
+  width: 90%;
+  
+}
+
+.fourthcards .textcontainer h4:nth-child(2){
+  margin-left: 5%;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+/*brandssection*/
+
+.brandssection {
+  display:flex;
+  width: 100%;
+  height: 40vh;
+  background-color: rgb(157, 157, 157);
+}
+
+.brandssection div{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 20%;
+  
+}
+
+.brandssection div img {
+  opacity: .4;
+  transition: .4S ease;
+  width: 40%;
+}
+
+.brandssection div img:hover {
+  opacity: 1;
+  transition: .4S ease;
+}
 
 
 
@@ -551,6 +843,7 @@ main{
     padding: 20px;
     margin-left: 30px; 
   } 
+  
   /*cards*/
   
   .firstcards >:nth-child(1){
@@ -625,13 +918,78 @@ main{
   top: -35%;
   left: 0%;
 }
+.red_rightcontent{
+  margin-left: 0%;
+}
 
 
+/*thIRDcards*/
+.thirdcards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 11%;
+  margin-bottom: 5%;
+  
+}
+.thirdcards div {
+  min-width : 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:400px;
+  
+}
+.thirdcards div img {
+  min-width : 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  
+}
+.thirdcards div button{
+  
+  top: -40px;
+  left: -140px ;
+}
 
+/*GreenSectn*/
 
-
+.greensection{
+  height: 400px;
 
 }
+.greensection img {
+  height:400px;
+  width:500px;
+  top: -35%;
+  left: 0%;
+}
+.green_rightcontent{
+  margin-left: 0%;
+}
+.greensection .green_rightcontent p {
+ 
+  font-weight: 300;
+  color: white;
+  padding: 2% 0%;
+  display: flex;
+  justify-content: end;
+  align-items: normal;
+  width: 400px;
+  
+}
+
+/*fourthcards*/
+
+
+
+
 /*media queries for red section */
 @media (max-width:850px) {
 
@@ -724,8 +1082,145 @@ main{
     top: -20%;
     left: -9%;
   }
+/*tHIRD cARDS*/
+
+.thirdcards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 3000px;
+  flex-wrap: wrap;
+  gap: 4%;
+  justify-items: center;
+}
+.thirdcards div {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:400px;
+  margin-bottom: 10px;
+}
+.thirdcards div img{
+  width : 400px;
+  height: 300px;;
+  border-radius: 20px;
+}
+
+.thirdcards div h4 {
+  padding: 15px 0px;
+  display: flex;
+  width: 300px;
+  text-align: center;
+  font-weight: 400;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.thirdcards div h1 {
+  padding: 0px 0px;
+  display: flex;
+  width: 300px;
+  justify-content: center;
+}
+.thirdcards div button{
+  left: 0px ;
+}
+
+/*GreenSectn*/
+
+.greensection{
+  margin-top: 200px;
+  width: 80%;
+  height: 800px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.greensection > div {
+  
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-items: center;
+  height: 50%;
+}
+.greensection .green_leftcontent {
+  justify-content: flex-end;
+}
+.greensection .green_rightcontent {
+  justify-content: flex-start;
+}
+.greensection .green_leftcontent h1{
+  color: white;
+  font-size: 2rem ;
+  line-height: 1;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
 
 
+.greensection .green_rightcontent h5 {
+  
+  font-weight: 400;
+  color: white;
+  padding: 9% 0%;
+  display: flex;
+  justify-content: center;
+  line-height: 1;
+  
+}
+.greensection .green_rightcontent h1{
+  font-weight: 700;
+  color: white;
+  font-size: 2rem ;
+  line-height: 1;
+  padding: 2% 0%;
+  display: flex;
+  justify-content: center;
+
+}
+.greensection .green_rightcontent p {
+ 
+  font-weight: 300;
+  color: white;
+  padding: 2% 0%;
+  display: flex;
+  justify-content: end;
+  align-items: normal;
+  width: 100%;
+  
+}
+.greensection .green_rightcontent button {
+ 
+  
+  color: rgb(110, 200, 49);
+  margin-top:   10%;
+  background-color: white;
+  padding: 3% 10%;
+  border-radius: 50px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  z-index: 9999999;
+}
+
+.greensection img {
+  position: absolute;
+  height:400px;
+  width:450px;
+  z-index: 33;
+  display: flex;
+  top: -20%;
+  left: -9%;
+}
 
 
 
@@ -810,9 +1305,99 @@ main{
 }
 
 .red_rightcontent{
-  
   margin-left: 0%;
 }
+
+/*thirdcards*/
+
+/*GreenSectn*/
+
+.green_rightcontent{
+  margin-left: 0%;
+}
+
+/*fourthcards*/
+
+
+.fourthcards {
+
+  flex-direction: column;
+  height: 1600px;
+}
+  
+.fourthcards .cardcontainer {
+   
+    width: 95%;
+    height: 500px;
+  }
+  
+.fourthcards img {
+    width:  clamp(550px,20vw,600px);
+    height: 240px;
+    border-radius: 20px;
+   
+
+  }
+  
+.imagecontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  
+.fourthcards .firsttexts  {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 5%;
+    width: 50%;
+
+  }
+  .fourthcards .textcontainer h1 {
+    width: 90%;
+    font-size: 20px;
+    margin-top: 5%;
+  }
+  .fourthcards .textcontainer p {
+   margin-top: 5%;
+   width: 80%;
+   font-size: clamp(13px,3vw,40px);
+  }
+}
+
+/*brandssection*/
+
+.brandssection {
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(208, 207, 207);
+}
+
+.brandssection div{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 100%;
+  height: 20%;
+}
+
+.brandssection div img {
+  opacity: .4;
+  transition: .4S ease;
+  width: 15%;
+  
+}
+
+.brandssection div img:hover {
+  opacity: 1;
+  transition: .4S ease;
+}
+
+
 
 
 
@@ -845,8 +1430,22 @@ main{
     line-height: 1;
     width: 100%;
   }
- 
-  
+
+  .greensection .green_leftcontent h1{
+    font-weight: 900;
+    color: white;
+    font-size: 2rem ;
+    line-height: 1;
+    width: 80%;
+  }
+  .greensection .green_rightcontent h1{
+    font-weight: 900;
+    color: white;
+    font-size: 2rem ;
+    line-height: 1;
+    width: 100%;
+  }
+
 }
 
 /*Animations*/
@@ -901,9 +1500,11 @@ main{
 .card1 {
   opacity: 0;
 }
+
 .card2{
   opacity: 0;
 }
+
 .img{
   opacity: 0;
 }
